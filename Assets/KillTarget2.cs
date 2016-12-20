@@ -41,12 +41,12 @@ public class KillTarget2 : MonoBehaviour {
             else
             {
                 // killed
-                Instantiate(killEffect, target.transform.position, target.transform.rotation);
+                GameObject go = (GameObject) Instantiate(killEffect, target.transform.position, target.transform.rotation);
                 score += 1;
                 countDown = timeToSelect;
                 SetRandomPosition();
-        
-                DestroyImmediate(killEffect);
+                Destroy(go, 1.5f); 
+               
             }
 
         }
